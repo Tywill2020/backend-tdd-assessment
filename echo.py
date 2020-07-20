@@ -13,9 +13,9 @@ def create_parser():
     """Returns an instance of argparse.ArgumentParser"""
     parser = argparse.ArgumentParser()
     parser.add_argument('text', help='text to be manipulated')
-    parser.add_argument('-u', '--upper' action='store_true', help="convert text to uppercase")
-    parser.add_argument('-l', '--lower' action='store_true', help="convert text to lowercase")
-    parser.add_argument('-t', '--title' action='store_true', help="convert text to titlecase")
+    parser.add_argument('-u', '--upper', action='store_true', help="convert text to uppercase")
+    parser.add_argument('-l', '--lower', action='store_true', help="convert text to lowercase")
+    parser.add_argument('-t', '--title', action='store_true', help="convert text to titlecase")
     return parser
 
 
@@ -28,7 +28,7 @@ def main(args):
         msg = msg.upper()
     if args.lower:
         msg = msg.lower()
-    if args.title
+    if args.title:
         msg = msg.title()
 
     print(msg)
