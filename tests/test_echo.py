@@ -88,13 +88,9 @@ class TestEcho(unittest.TestCase):
             result, argparse.ArgumentParser,
             "create_parser() function is not returning a parser object")
 
-    def test_help(self):
-        args = ["-h"]
-        stdout, stderr = run_capture(self.module.__file__)
-        with open('USAGE') as f: 
-            usage = f.read()
-        self.assertEqual('\n'.join(stdout) + '\n', usage)
-        pass
+    #
+    # Students: add more parser tests here
+    #
 
     def test_echo(self):
         """Check if main() function prints anything at all"""
@@ -118,28 +114,9 @@ class TestEcho(unittest.TestCase):
         assert output, "The program did not print anything."
         self.assertEqual(output[0], "hello world")
 
-    def test_upper_short(self):
-        """Checkif short option '-u' performs uppercasing"""
-        args = ["-l", "hello world"]
-        with Capturing() as output:
-            self.module.main(args)
-        assert output, "The program did not print anything."
-        self.assertEqual(output[0], "HELLO WORLD")
-   
-    def test_upper_long(self):
-        """Checkif short option '-u' performs uppercasing"""
-        args = ["--upper", "hello world"]
-        with Capturing() as output:
-            self.module.main(args)
-        assert output, "The program did not print anything."
-        self.assertEqual(output[0], "HELLO WORLD")
-    
-    def test_no_option(self):
-        args = ['-tul', 'hELlo WoRLd']
-        with Capturing() as output:
-            self.module.main(args)
-        assert output, "The program did not print anything."
-        self.assertEqual(output[0], "Hello World")
+    #
+    # Students: add more cmd line options tests here.
+    #
 
 
 if __name__ == '__main__':
